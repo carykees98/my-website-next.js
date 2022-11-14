@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.navButton {
+		@apply inline-block p-2 m-1 text-3xl rounded-xl hover:bg-slate-500;
+	}
+}
