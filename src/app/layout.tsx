@@ -1,17 +1,13 @@
-import { Navbar } from "../components/navbar"
+import "../../styles/globals.css";
+import Navbar from "../components/navbar";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <script src="https://kit.fontawesome.com/425a90f7fa.js" crossOrigin="anonymous"></script>
       </head>
-      <body>
+      <body className="bg-slate-800">
         <Navbar />
         {children}
       </body>
