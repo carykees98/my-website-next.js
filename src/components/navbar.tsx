@@ -4,27 +4,29 @@ function Navbutton(props: { pageName: String }) {
 	let fileName: string
 
 	if (props.pageName === 'Home') {
-		fileName = ""
+		fileName = "."
 	} else {
 		fileName = props.pageName.toLowerCase()
 	}
 	return (
-		<li className="navButton"><Link href={"./" + fileName}>{props.pageName}</Link></li>
+		<Link href={"./" + fileName} className="text-4xl p-6">{props.pageName}</Link>
 	)
 }
 
-export function Navbar() {
-	/* const [profileShown, setProfileShown] = useState(false) */
-
+export default function Navbar() {
 	const pages: string[] = ['Home', 'To-Do']
 
 	return (
-		<header className="bg-slate-600 text-white border-b-2 border-white h-fit grid grid-flow-col grid-cols-2">
-			<ul className="list-none w-fit justify-center px-">
-				{pages.map((page) => <Navbutton pageName={page} key={page} />)}
-			</ul>
-			<div className="flex float-right content-center">
-				<button className="float-right w-fit" /* onClick={() => setProfileShown(!profileShown)} */>Profile</button>
+		<header className="bg-sky-800 text-white border-b-2 border-white h-16 grid grid-flow-col grid-cols-4">
+			<div className="border-r-2 border-white"></div>
+			<div className="justify-center items-center border-r-2 border-white h-full w-full">
+				<nav >
+					{pages.map((page) => <Navbutton pageName={page} key={page} />)}
+				</nav>
+			</div>
+			<div className="border-r-2 border-white">
+			</div>
+			<div className="">
 			</div>
 		</header>
 	)
